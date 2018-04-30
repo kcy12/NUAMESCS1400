@@ -1,0 +1,10 @@
+52
+GHI
+30
+DEF
+15
+GRK
+15
+NOP
+4
+ABC

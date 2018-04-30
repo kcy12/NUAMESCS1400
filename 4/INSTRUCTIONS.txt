@@ -1,0 +1,3 @@
+Each folder is labeled with a class period.
+Open your class period folder and make a folder that is labeled with your name in the following format: Last_F
+In that folder, create new blank text file that will serve as a place holder so we can push your folders to GitHub.

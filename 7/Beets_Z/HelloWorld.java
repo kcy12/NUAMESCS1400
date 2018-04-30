@@ -1,0 +1,12 @@
+/***********************
+*Zoey Beets
+*Hello World 
+*Last Edited: 1/18/18
+***********************/
+
+public class HelloWorld{
+   public static void main(String[] args){
+   System.out.println("( Owo) Hewwo Worwd :3");
+   }//end main function
+
+}//end class HelloWorld

@@ -1,0 +1,10 @@
+5
+ABC
+4
+DEF
+4
+MPA
+3
+GHI
+2
+JKL
