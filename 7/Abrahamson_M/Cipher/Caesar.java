@@ -64,15 +64,17 @@ public class Caesar{
       if(charInt<122&&charInt>97)//if the int represents a lowercase letter (check the ascii chart)
 		{
          charInt -= 97;//subtract 97 from the int//puts it into the index # of array
-			messageArray[charInt] + 1;//add 1 to the int array at that index
+			messageArray[charInt] += 1;//add 1 to the int array at that index
 		}
+    }
 		return messageArray;//return the int array
+      
 	}//end letter distribution method
    
 	public static void printDistr(int[] distr) {
-      for(int i = 0; i< distr.length; i++)//for each element in the array
+      for(int i = 0; i < distr.length; i++)//for each element in the array
 		{
-         char c = (char) i + 97;//create a char from the current position (ie. 0=a,1=b,...)//THIS IS INCORRECT
+         char c = (char) i + 97;//create a char from the current position (ie. 0=a,1=b,...)
 		   System.out.print(c + ": " + distr[i] + "|");//what letter? the one from the array we just converted?
          for(int j = 0; j<distr[i]; j++)//for the number in the array at the current position
 		   {
