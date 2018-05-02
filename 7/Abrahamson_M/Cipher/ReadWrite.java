@@ -6,10 +6,10 @@ public class ReadWrite{
    {
       String returnString = "";//create a string to hold the message and get the first line from the file
       returnString = file.nextLine();
-      while(file != null)//while the file has a next line
+      while(returnString != null)//while the file has a next line
       {//How do you know what the message string is 
          returnString += "\r";/*carriage return escape sequence*/
-         returnString += "\n";/*newline escape sequence*/
+         returnString += "\n";/*newline escape sequence*///add a try catch to find where the error is
          returnString += file.nextLine();/*next line from the file*/
          //that could all be done in one line but takes longer to write out
       }   
