@@ -1,11 +1,11 @@
-import java.util.InputMismatchException;
+import java.util.*;
 
 public class Main{
    public static void main(String[] args){
       Scanner in = new Scanner(System.in);
       System.out.println("Welcome to the Caesar Cipher!\nThis utility will let you encrypt and decrypt a message"
 				+ " from a file you provide.");
-		int userChoice = -1;
+		int userChoice = 0;
 		int cipher = 0;
       String file;
       String again = "yes";
@@ -22,7 +22,7 @@ public class Main{
             + "Option 0: Exit Program\n";
 
 		
-		while (userChoice = 0) {
+		while (userChoice == 0) {
          if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y")){
             System.out.print(menu);
          }
@@ -38,7 +38,7 @@ public class Main{
 			}
          //make a switch case for the menu
          switch(userChoice) {
-         case 1;
+         case 1:
                //encrypt message
                System.out.println("Enter your short message: ");
 					message = in.nextLine();
@@ -48,7 +48,7 @@ public class Main{
          case 2:
    			   //decrypt message
                System.out.println("Enter your short message: ");
-				   message = in.nextLine;
+				   message = in.nextLine();
 					cipher = get_num(in);
 					System.out.println(Caesar.decrypt(message, cipher));
 	      break;
@@ -73,14 +73,14 @@ public class Main{
                }
                else{
                   cipher = get_num(in);
-                  message = Readwrite.read(ReadWrite.open_file(file,in));
+                  message = ReadWrite.read(ReadWrite.open_file(file,in));
                   ReadWrite.write("Decrypted.txt", Caesar.decrypt(message, cipher));
                   System.out.println("Decrypted message saved to Decrypted.txt");
                }
          break;
          case 5:
                //letter distribution
-               temp = "a";
+               String temp = "a";
                while(!temp.equalsIgnoreCase("y") && !temp.equalsIgnoreCase("n")){
                   System.out.print("Is the message in a file (y/n)?: ");
                   temp = in.nextLine();
@@ -96,33 +96,36 @@ public class Main{
                      break;
                   }
                   else{
-                     message = readWrite.read(ReadWrite.open_file(file,in));
+                     message = ReadWrite.read(ReadWrite.open_file(file,in));
                   }
                }
-          break;
-          case 0;
                //end file message
-               Caesar.printDistr(Caesar.letterDistr(message)};
+               Caesar.printDistr(Caesar.letterDistr(message));
+          break;
+          case 0:
+               
               
                //exit message
                System.out.println("Thank you for using the utility and goodbye~");
 
 				   //invalid input
 					System.out.println("That wasn't a valid menu option.");
+         break;
          }
-			//end switch
-         if (userChoice != 0){
-            System.out.print("Would you like to see the menu again?: ");
-            again = in.nextLine();
+
+			//end switchy
+     
          }
-		}//end while loop menu
+         
+       
+		//end while loop menu
 		in.close();
    }//end main method
    
    public static int get_num(Scanner in){
   	   int num = 0;
       while (num < 2 || num > 26){
-         try 
+         try {
             System.out.print("What is the cipher?: ");
    	   	num = in.nextInt();
    			in.nextLine();
@@ -138,11 +141,11 @@ public class Main{
    }//end get_num method
    public static String get_name(Scanner in){
       String file;
-      String temp
+      String temp;
       String response;
       System.out.print("Enter the name of the text file: ");
-      file = in.nextLine;
-      String ext = file.substring(file.length-4);
+      file = in.nextLine();
+      String ext = file.substring(file.length()-4);
       boolean txt = ext.equals(".txt");
       if (!txt){
   			temp = file+".txt";
@@ -161,6 +164,7 @@ public class Main{
 		}
       else{
           //file;
-      
+      }
+      return file;
    }//end get_name method
 }//end Main
