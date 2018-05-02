@@ -8,11 +8,11 @@ public class ReadWrite{
       returnString = file.nextLine();
       //get the first line from the file
       //while the file has a next line
-      while(open_file != null) {
+
          returnString += "\r";
          returnString += "\n";
          returnString += file.nextLine();
-              }
+              
       file.close();
 		return returnString;
 	}//end read
@@ -38,7 +38,7 @@ public class ReadWrite{
       try {
          PrintWriter toFile = new PrintWriter(file_name);
          toFile.write(message);
-         toFile.close;
+         toFile.close();
       }
          //create a PrintWriter object based on file_name
          //print the message to the PrintWriter object
