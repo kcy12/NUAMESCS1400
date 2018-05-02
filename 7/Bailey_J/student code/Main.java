@@ -37,18 +37,22 @@ public class Main{
             userChoice = -1;
 			}
          //make a switch case for the menu
+         switch(userChoice) {
+         case 1;
                //encrypt message
                System.out.println("Enter your short message: ");
 					message = in.nextLine();
 					cipher = get_num(in);
 					System.out.println(Caesar.encrypt(message,cipher));
-
+         break;
+         case 2:
    			   //decrypt message
                System.out.println("Enter your short message: ");
 				   message = in.nextLine;
 					cipher = get_num(in);
-					System.out.println(Caesar.decrypt(message cipher));
-					
+					System.out.println(Caesar.decrypt(message, cipher));
+	      break;
+         case 3:
                //encrypt text file
                file = get_name(in);
                if(file.equals("n")){
@@ -60,6 +64,8 @@ public class Main{
                   ReadWrite.write("Encrypted.txt", Caesar.encrypt(message, cipher));
                   System.out.println("Encrypted message saved to Encrypted.txt");
                }
+         break;
+         case 4:
                //decrypt text file
                file = get_name(in);
                if(file.equals("n")){
@@ -71,7 +77,8 @@ public class Main{
                   ReadWrite.write("Decrypted.txt", Caesar.decrypt(message, cipher));
                   System.out.println("Decrypted message saved to Decrypted.txt");
                }
-              
+         break;
+         case 5:
                //letter distribution
                temp = "a";
                while(!temp.equalsIgnoreCase("y") && !temp.equalsIgnoreCase("n")){
@@ -81,6 +88,7 @@ public class Main{
                if(temp.equalsIgnoreCase("n")){
                   System.out.println("Enter your encrypted message: ");
 					   message = in.nextLine();
+               }
                //end enter message
                else{
                   file = get_name(in);
@@ -90,15 +98,18 @@ public class Main{
                   else{
                      message = readWrite.read(ReadWrite.open_file(file,in));
                   }
+               }
+          break;
+          case 0;
                //end file message
-               Caesar.printDistr(Caesar.letterDistr(message);
+               Caesar.printDistr(Caesar.letterDistr(message)};
               
                //exit message
                System.out.println("Thank you for using the utility and goodbye~");
 
 				   //invalid input
 					System.out.println("That wasn't a valid menu option.");
-
+         }
 			//end switch
          if (userChoice != 0){
             System.out.print("Would you like to see the menu again?: ");
