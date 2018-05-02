@@ -41,7 +41,7 @@ public class ReadWrite{
       //try
          PrintWriter toFile =	new PrintWriter(file_name);//create a PrintWriter object based on file_name
          toFile.write(message);//print the message to the PrintWriter object
-         toFile.close;//close the PrintWriter object 
+         toFile.close();//close the PrintWriter object 
       }
       catch(FileNotFoundException e)
       {
