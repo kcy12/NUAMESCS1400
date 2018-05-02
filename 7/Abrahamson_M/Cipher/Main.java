@@ -4,7 +4,7 @@ public class Main{
    public static void main(String[] args){
       Scanner in = new Scanner(System.in);
       System.out.println("Welcome to the Caesar Cipher!\nThis utility will let you encrypt and decrypt a message from a file you provide.");
-      int userChoice = 0;
+      int userChoice = 64;
       int cipher = 0;
       String file;
       String again = "yes";
@@ -21,7 +21,7 @@ public class Main{
       menu += "Option 0: Exit Program\n";
 
 		
-	 while (userChoice == 0) {
+	 while (userChoice == 64) {
          if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y")){
             System.out.print(menu);
          }
@@ -106,6 +106,7 @@ public class Main{
 			case 0:
                //exit message
                System.out.println("Thank you for using the utility and goodbye~");
+               userChoice = 0;
 			break;
 			default:
 				   //invalid input
@@ -119,7 +120,7 @@ public class Main{
             again = in.nextLine();
 	    if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y"))
 	    {
-		    userChoice = 0;//this lets it enter the loop again
+		    userChoice = 64;//this lets it enter the loop again
 	    }
     }
     }//end while loop menu
@@ -151,7 +152,7 @@ public class Main{
       String response;
       System.out.print("Enter the name of the text file: ");
       file = in.nextLine();
-      String ext = file.substring(file.length-4);
+      String ext = file.substring(file.length() - 4);
       boolean txt = ext.equals(".txt");
       if (!txt){
   			temp = file+".txt";
@@ -169,7 +170,7 @@ public class Main{
          }
 		}
       else{
-          //file;//wtf
+          return file;//file;//wtf is this
       }
    }//end get_name method
 }//end Main
