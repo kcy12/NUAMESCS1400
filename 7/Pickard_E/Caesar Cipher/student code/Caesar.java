@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Caesar{
    public static String decrypt(String message, int cipher) {
-		return /*run the encryption method backwards*/;
+		return encrypt(message, -cipher);
 	}//end decrypt
 	
 	public static String encrypt(String message, int cipher) {
@@ -15,7 +15,7 @@ public class Caesar{
       
       for (int i = 0; i < message.length(); i++) {
          //create an integer representation of the char at the current position
-         char subChar = message.CharAt(i);
+         char subChar = message.charAt(i);
          int charInt = (int) subChar;
          //if the int represents a capital letter (check ascii chart)
          if (charInt > 64 && charInt < 91) {
@@ -46,7 +46,7 @@ public class Caesar{
          
          subChar = (char) charInt;
          //add the char represented by the int to the encrypted message string
-         encryptMessage.appends(subChar);      
+         encryptMessage += subChar;      
       }
 
       return encryptMessage;
@@ -58,8 +58,8 @@ public class Caesar{
 		
       //for each character in the message
       for (int i = 0; i < message.length(); i++) {
-         char currentChar = message.CharAt(i);
-         int charInt = (int) subChar;
+         char currentChar = message.charAt(i);
+         int charInt = (int) currentChar;
          //convert the current char to lowercase then to an int
          if (charInt > 64 && charInt < 91) {
             charInt = charInt + 33;
@@ -77,13 +77,14 @@ public class Caesar{
    
 	public static void printDistr(int[] distr) {
       //for each element in the array
-      for (int i; i < distr.length; i++) {
-         char c = (char) i + 97; //create a char from the current position (ie. 0=a,1=b,...)
+      for (int i = 0; i < distr.length; i++) {
+         char c = (char) (i + 97); //create a char from the current position (ie. 0=a,1=b,...)
          System.out.print(c + ": " + distr[i] + "|");
          for (int j = 0; j < distr[i]; j++) { //for the number in the array at the current position
             System.out.print("*");
-            System.out.println(); //move to the next line
+            
          }
+         System.out.println(); //move to the next line
       }		
 	}//end printDistr
    
