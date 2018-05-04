@@ -9,19 +9,20 @@ public class Caesar{
 	
 	public static String encrypt(String message, int cipher) {
       //create an empty string for the encrypted message
-      String ecryptedMessage = "";	
-      char subChar = message.charAt(i);	
+      int i;
+      String encryptedMessage = "";		
       //if cipher < 0
       if(cipher < 0){
          //cipher += 26
          cipher += 26;
       }      
       //for each character in the message
-      for(int i = 0; i < message.length; i++){
+      for(i = 0; i < message.length(); i++){
+         char subChar = message.charAt(i);
          //create an integer representation of the char at the current position
          int charInt = subChar;
          //if the int represents a capital letter (check ascii chart)
-         if(65 <= charInt <= 90){
+         if(charInt < 91 && charInt > 64){
             //add the cipher to the int
             charInt += cipher;
             //if the new number is out the range of capital letters, wrap it back, ie. Z+1=A, Z+2=B
@@ -33,7 +34,7 @@ public class Caesar{
             }
          }
          //else if the int represents a lower letter (check ascii chart)
-         else if(97 <= charInt <= 122){
+         else if(charInt < 123 && charInt > 96){
             //add the cipher to the int
             charInt += cipher;
 				//if the new number is out the range of capital letters, wrap it back, ie. z+1=a, z+2=b
@@ -53,21 +54,21 @@ public class Caesar{
    public static int[] letterDistr(String message) {
 		//initialize an int array to hold the number of each letter
       int[] messageArray = new int[26];
-      char subChar = message.charAt(i);
 		
       //for each character in the message
-      for(int i = 0; i < message.length; i++){
+      for(int i = 0; i < message.length(); i++){
          //convert the current char to lowercase then to an int
-         int charInt = subChar;
-         if(65 <= charInt <= 90){
-            charInt += 33;
+         char subChar = message.charAt(i);
+         int charInt = (int) subChar;
+         if(charInt < 91 && charInt > 64){
+            charInt += 32;
          }
          //if the int represents a lowercase letter (check the ascii chart)
-         if(97 <= charInt <= 122){
+         if(charInt < 123 && charInt > 96){
             //subtract 97 from the int
             charInt -= 97;
             //add 1 to the int array at that index
-            messageArray[charInt] + 1
+            messageArray[charInt] += 1;
          }
        }
        //return the int array
@@ -76,12 +77,13 @@ public class Caesar{
    
 	public static void printDistr(int[] distr) {
       //for each element in the array
-      for(int i = 0; i < dist.length; i++){
+      for(int i = 0; i < distr.length; i++){
          //create a char from the current position (ie. 0=a,1=b,...)
-         char c = (char) i + 97;
+         int testInt = i + 97;
+         char c = (char) testInt;
 			System.out.print(c + ": " + distr[i] + "|");
          //for the number in the array at the current position
-         for(int j = 0; j < dist[i]; j++){
+         for(int j = 0; j < distr[i]; j++){
             //print an * on the same line
             System.out.print("*");
          }
