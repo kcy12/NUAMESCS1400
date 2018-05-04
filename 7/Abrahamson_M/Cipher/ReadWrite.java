@@ -5,8 +5,8 @@ public class ReadWrite{
 	public static String read(Scanner file)
    {
       String returnString = "";//create a string to hold the message and get the first line from the file
-      returnString = file.nextLine();
-      while(1 != 0)//while the file has a next line
+      returnString = file.nextLine();//////////////////////////////////////////////////////////////////THIS IS THE FINAL ISSUE
+      while(returnString != null)//while the file has a next line
       {//How do you know what the message string is 
          returnString += "\r";/*carriage return escape sequence*/
          returnString += "\n";/*newline escape sequence*///add a try catch to find where the error is
