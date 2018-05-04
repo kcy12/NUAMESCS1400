@@ -18,7 +18,7 @@ public class Caesar{
          char subChar = message.charAt(i);
          int charInt = (int) subChar;
          //if the int represents a capital letter (check ascii chart)
-         if(charInt > 64 && charInt > 91) {
+         if(charInt > 64 && charInt < 91) {
             //add the cipher to the int
             charInt += cipher;
             //if the new number is out the range of capital letters, wrap it back, ie. Z+1=A, Z+2=B
@@ -30,7 +30,7 @@ public class Caesar{
             }
          }
          //else if the int represents a lower letter (check ascii chart)
-         else if (charInt > 96 && charInt > 123) {   
+         else if (charInt > 96 && charInt < 123) {   
             //add the cipher to the int
             charInt += cipher;
 				//if the new number is out the range of capital letters, wrap it back, ie. z+1=a, z+2=b
@@ -56,11 +56,11 @@ public class Caesar{
          //convert the current char to lowercase then to an int
          char theChar = message.charAt(i);
          int charInt = (int) theChar;
-         if(charInt > 64 && charInt > 91) {  
+         if(charInt > 64 && charInt < 91) {  
             charInt += 33;
          }
          //if the int represents a lowercase letter (check the ascii chart)
-         if (charInt > 96 && charInt > 123) {  
+         if (charInt > 96 && charInt < 123) {  
             //subtract 97 from the int
             charInt -= 97;
             //add 1 to the int array at that index
