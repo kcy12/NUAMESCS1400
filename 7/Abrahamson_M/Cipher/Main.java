@@ -174,7 +174,7 @@ public class Main{
          }
 		}
       else{
-          return file;//file;//wtf is this
+          return file;
       }
    }//end get_name method
 }//end Main
