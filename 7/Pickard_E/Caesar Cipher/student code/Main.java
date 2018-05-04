@@ -113,16 +113,22 @@ public class Main{
          case 0: 
                //exit message
                System.out.println("Thank you for using the utility and goodbye~");
-
-				   //invalid input
-					System.out.println("That wasn't a valid menu option.");
-               
+               userChoice = -1;
          break;
+         
+			default:	   
+               //invalid input
+					System.out.println("That wasn't a valid menu option.");  
+         break;
+         
 			}//end switch
-         if (userChoice != 0){
+         if (userChoice != -1){
             System.out.print("Would you like to see the menu again?: ");
             again = in.nextLine();
             if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y")) {
+               userChoice = 0;
+            }
+            if(again.equalsIgnoreCase("no")||again.equalsIgnoreCase("n")) {
                userChoice = 0;
             }
          }
