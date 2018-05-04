@@ -1,0 +1,2 @@
+do-while loop adds the new line to the end by checking condition first. idk the better way to do this.
+still having errors with geting the final return value probably need to add an exception.
