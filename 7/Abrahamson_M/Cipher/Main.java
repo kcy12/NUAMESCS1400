@@ -4,7 +4,7 @@ public class Main{
    public static void main(String[] args){
       Scanner in = new Scanner(System.in);
       System.out.println("Welcome to the Caesar Cipher!\nThis utility will let you encrypt and decrypt a message from a file you provide.");
-      int userChoice = 64;
+      int userChoice = 0;
       int cipher = 0;
       String file;
       String again = "yes";
@@ -14,14 +14,14 @@ public class Main{
       menu += "Option 1: Encrypt a Message\n";
       menu += "Option 2: Decrypt a Message\n";
       menu += "Long messages\n";
-      menu += "Option 3: Encrypt a Text File\n";//Could've been done in one line. looks easier to read this way imo
+      menu += "Option 3: Encrypt a Text File\n";
       menu += "Option 4: Decrypt a Text File\n";
       menu += "Other Functions\n";
       menu += "Option 5: Letter Distribution Analysis\n";
       menu += "Option 0: Exit Program\n";
 
 		
-	 while (userChoice == 64) {
+	 while (userChoice == 0) {
          if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y")){
             System.out.print(menu);
          }
@@ -106,7 +106,7 @@ public class Main{
 			case 0:
                //exit message
                System.out.println("Thank you for using the utility and goodbye~");
-               userChoice = 0;
+               userChoice = -1;
 			break;
 			default:
 				   //invalid input
@@ -114,14 +114,18 @@ public class Main{
 			break;
 
 		}//end switch
-    if (userChoice != 0)
+    if (userChoice != -1)
 	 {
             System.out.print("Would you like to see the menu again?: ");
             again = in.nextLine();
 	    if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y"))
 	    {
-		    userChoice = 64;//this lets it enter the loop again
+		    userChoice = 0;//this lets it enter the loop again
 	    }
+       if(again.equalsIgnoreCase("no")||again.equalsIgnoreCase("n"))/////////////THIS IS BUGGED TELL SIMONSEN
+       {
+         userChoice = 0;
+       }
     }
     }//end while loop menu
     in.close();
