@@ -6,7 +6,7 @@ public class ReadWrite{//this contains the final 14 points needed for 100%
    {
       String returnString = "";//create a string to hold the message and get the first line from the file
       returnString = file.nextLine();
-      while(file.hasNextLine());//while the file has a next line
+      do//while the file has a next line
       {//How do you know what the message string is 
          returnString += "\r";/*carriage return escape sequence*/
          returnString += "\n";/*newline escape sequence*///add a try catch to find where the error is
@@ -20,8 +20,7 @@ public class ReadWrite{//this contains the final 14 points needed for 100%
             break;
          }
          //that could all be done in one line but takes longer to write out
-      }
-		returnString += "\r" + "\n";
+      }while(file.hasNextLine());
       file.close();
 		return returnString;
    }//end read
