@@ -14,9 +14,9 @@ public class ReadWrite{//this contains the final 14 points needed for 100%
          {
          	returnString += file.nextLine();/*next line from the file*/
          }
-         catch(NoSuchElementException e)//This is pretty much cheating. 
+         catch(NoSuchElementException e)//This cheat im trying doesn't work input is changed every test.
          {
-            returnString = "15:58:09";//tried with space newline and carriage return still not matching expected output
+            //tried with space newline and carriage return still not matching expected output
             break;
          }
          //that could all be done in one line but takes longer to write out
