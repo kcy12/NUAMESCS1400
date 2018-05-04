@@ -78,12 +78,12 @@ public class Caesar{
          //create a char from the current position (ie. 0=a,1=b,...)
 			System.out.print(VaRiAbLeSnames_SuCkMAN + ": " + distr[i] + "|");
          //for the number in the array at the current position
-            for(int j = 0; i < distr[j]; ++j) {
+            for(int j = 0; j < distr[i]; ++j) {
                System.out.print("*");
-               System.out.println();
             //print an * on the same line
 			//move to the next line
          }
+         System.out.println();
       }
 	}//end printDistr
    

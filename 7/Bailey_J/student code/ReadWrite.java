@@ -1,4 +1,4 @@
-import java.io.*;
+/import java.io.*;
 import java.util.Scanner;
 
 public class ReadWrite{
@@ -21,9 +21,9 @@ public class ReadWrite{
       //try
       try {
          //create a File object based on file_name
-         File file = new File(file_name); 
+         File file0 = new File(file_name); 
          //change the Scanner input to read from the File object
-         input = new Scanner(file);
+         input = new Scanner(file0);
       }
       //catch if the file isn't found
       catch(FileNotFoundException e) {
@@ -46,7 +46,7 @@ public class ReadWrite{
       //catch if the file is not found - eventhough java is making a file, so it doesn't need to be there first --stupid java
       catch(FileNotFoundException e) {
         //display appropriate error message
-        System.out.println("Cannot find file");
+        System.out.println("If you're seeing this, Fuck");
       }
    }//end write method
 }// end class File

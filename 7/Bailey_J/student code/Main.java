@@ -5,7 +5,7 @@ public class Main{
       Scanner in = new Scanner(System.in);
       System.out.println("Welcome to the Caesar Cipher!\nThis utility will let you encrypt and decrypt a message"
 				+ " from a file you provide.");
-		int userChoice = 0;
+		int userChoice = 6;
 		int cipher = 0;
       String file;
       String again = "yes";
@@ -22,7 +22,7 @@ public class Main{
             + "Option 0: Exit Program\n";
 
 		
-		while (userChoice == 0) {
+		while (userChoice != 0) {
          if(again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y")){
             System.out.print(menu);
          }
@@ -107,7 +107,8 @@ public class Main{
               
                //exit message
                System.out.println("Thank you for using the utility and goodbye~");
-
+         break;
+         default:
 				   //invalid input
 					System.out.println("That wasn't a valid menu option.");
          break;
@@ -124,6 +125,7 @@ public class Main{
    
    public static int get_num(Scanner in){
   	   int num = 0;
+      
       while (num < 2 || num > 26){
          try {
             System.out.print("What is the cipher?: ");
