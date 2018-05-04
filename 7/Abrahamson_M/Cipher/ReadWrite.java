@@ -12,8 +12,6 @@ public class ReadWrite{//this contains the final 14 points needed for 100%
          returnString += "\n";/*newline escape sequence*/
          returnString += file.nextLine();/*next line from the file*/
       }
-      returnString += "\r";
-      returnString += "\n";
       /*if(Character.isDigit(returnString.charAt(7)))
       {
          returnString += "\r";
