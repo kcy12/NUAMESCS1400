@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class ReadWrite{
 	public static String read(Scanner file){
       //create a string to hold the message
-      String returnString;
+      String returnString = "";
       //get the first line from the file
       returnString = file.nextLine();
       //while the file has a next line
-      while (file != null) {
+      while(file.hasNextLine()) {
          returnString += "\r"; //carriage escape sequence
          returnString += "\n"; //newline escape sequcne
          returnString += file.nextLine(); /*next line from the file*/
