@@ -115,7 +115,13 @@ public class Main{
          }
 
 			//end switchy
-     
+         if (userChoice != 0) {
+            System.out.print("Would you like to see the menu again?: ");
+            again = in.nextLine();
+            if (again.equalsIgnoreCase("yes")||again.equalsIgnoreCase("y")){
+               userChoice = 0;
+            }
+         }
          }
          
        

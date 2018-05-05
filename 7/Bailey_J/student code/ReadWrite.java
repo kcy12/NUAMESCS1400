@@ -8,22 +8,25 @@ public class ReadWrite{
       returnString = file.nextLine();
       //get the first line from the file
       //while the file has a next line
-      while (file != null) {
+      while (file.hasNextLine()){
          returnString += "\r";
          returnString += "\n";
          returnString += file.nextLine();
-         }    
+      }
+
+         
       file.close();
 		return returnString;
+
 	}//end read
 	
 	public static Scanner open_file(String	file_name, Scanner input) {
       //try
       try {
          //create a File object based on file_name
-         File file0 = new File(file_name); 
+         File file = new File(file_name); 
          //change the Scanner input to read from the File object
-         input = new Scanner(file0);
+         input = new Scanner(file);
       }
       //catch if the file isn't found
       catch(FileNotFoundException e) {

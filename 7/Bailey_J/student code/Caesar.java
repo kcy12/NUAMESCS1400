@@ -57,7 +57,7 @@ public class Caesar{
          char theChar = message.charAt(i);
          int charInt = (int) theChar;
          if(charInt > 64 && charInt < 91) {  
-            charInt += 33;
+            charInt += 32;
          }
          //if the int represents a lowercase letter (check the ascii chart)
          if (charInt > 96 && charInt < 123) {  
