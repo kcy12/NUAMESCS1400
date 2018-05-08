@@ -28,6 +28,7 @@ public class Main{
          System.out.print("What is your choice?: ");
          try{
             userChoice = scnr.nextInt();
+            scnr.nextLine();
          }
          catch (InputMismatchException e){
             System.out.println("Input was not a number.");
