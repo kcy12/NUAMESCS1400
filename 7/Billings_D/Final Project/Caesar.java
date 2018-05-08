@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Caesar{
    public static String decrypt(String message, int cipher) {
 		String decryptedMessage = "";
-      encrypt(message, -(cipher));
+      decryptedMessage = encrypt(message, -(cipher));
       return decryptedMessage;
 	}//end decrypt
 	
@@ -27,11 +27,12 @@ public class Caesar{
             charInt += cipher;
             //if the new number is out the range of capital letters, wrap it back, ie. Z+1=A, Z+2=B
             if(charInt > 90){
-               charInt = charInt - 26;
+               charInt -= 26;
             }
             if(charInt < 65){
-               charInt = charInt + 26;
+               charInt += 26;
             }
+            subChar = (char) charInt;
          }
          //else if the int represents a lower letter (check ascii chart)
          else if(charInt < 123 && charInt > 96){
@@ -39,11 +40,12 @@ public class Caesar{
             charInt += cipher;
 				//if the new number is out the range of capital letters, wrap it back, ie. z+1=a, z+2=b
             if(charInt > 122){
-               charInt = charInt - 26;
+               charInt -= 26;
             }
-            if(charInt < 97){
-               charInt = charInt + 26;
+            if(charInt < 61){
+               charInt += 26;
             }
+            subChar = (char) charInt;
          }
 			//add the char represented by the int to the encrypted message string
          encryptedMessage += subChar; //if this doesn't work try the .append method
